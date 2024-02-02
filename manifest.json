@@ -1,0 +1,20 @@
+{
+  "name": "Formulario Paises",
+  "short_name": "Formulario Paises",
+  "icons": [
+    {
+      "src": "/img/portada.jpg",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/portada.jpg",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007bff"
+}

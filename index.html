@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="css/style.css">
+<link rel="manifest" href="/manifest.json">
+<link rel="stylesheet" href="/service-worker.js">
+<link rel="stylesheet" href="img/ovni.jpg">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulario Países</title>
+<script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function(err) {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1 style="color: #35dc62;">Practica Lista de Paises</h3>
+
+    <div class="form-container">
+        <div>
+           
+            <label for="country">Selecciona País :</label>
+            <select name="country" id="country" onchange="populateStates()">
+                <option value="Mexico">Mexico</option>
+                <option value="USA">Estados Unidos</option>
+                <option value="Canada" selected>Canada</option>
+            </select>
+        </div>
+        <div>
+            <label for="state">Estado :</label>
+            <select name="state" id="state" onchange="populateMunicipalities()">
+               
+            </select>
+        </div>
+        <div>
+            <label for="municipality">Municipio :</label>
+            <select name="municipality" id="municipality" onchange="populateLocalities()">
+                
+            </select>
+        </div>
+        <div>
+            <label for="locality">Localidad :</label>
+            <select name="locality" id="locality">
+                
+            </select>
+        </div>
+        <button onclick="saveFormData()">Enviar</button>
+
+    </div>
+
+    <div id="saved-data">
+        
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
